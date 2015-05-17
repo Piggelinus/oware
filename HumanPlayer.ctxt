@@ -1,0 +1,24 @@
+#BlueJ class context
+comment0.params=
+comment0.target=HumanPlayer()
+comment0.text=\r\n\ \ \ \ public\ static\ void\ main(String[]\ args)\ {\r\n\ \ \ \ \ \ \ \ HumanPlayer\ player\ \=\ new\ HumanPlayer();\r\n\ \ \ \ \ \ \ \ int\ playerNum\ \=\ 1;\r\n\ \ \ \ \ \ \ \ Board\ b\ \=\ new\ BoardImpl();\r\n\ \ \ \ \ \ \ \ try\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ int\ house\ \=\ player.getMove(b.clone(),\ playerNum);\r\n\ \ \ \ \ \ \ \ \ \ \ \ b.makeMove(house,\ playerNum);\r\n\ \ \ \ \ \ \ \ \ \ \ \ player.out.println(b);\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ \ \ \ \ catch\ (Exception\ e)\ {\r\n\ \ \ \ \ \ \ \ \ \ \ \ player.out.println(e.getMessage());\r\n\ \ \ \ \ \ \ \ }\r\n\ \ \ \ }\r\n
+comment1.params=name
+comment1.target=HumanPlayer(java.lang.String)
+comment2.params=
+comment2.target=java.lang.String\ getName()
+comment3.params=b\ playerNum
+comment3.target=int\ getMove(Board,\ int)
+comment4.params=b\ house\ playerNum
+comment4.target=int\ checkMove(Board,\ int,\ int)
+comment5.params=
+comment5.target=java.lang.String\ toString()
+comment6.params=
+comment6.target=boolean\ isComputer()
+comment6.text=\r\n\ returns\ true\ is\ this\ is\ a\ computer\ player.\ Computer\ players\ are\ limited\ to\ one\ second\ per\ move\ (on\ E216\ computers)\ and\ forfeit\ the\ game\ if\ they\ quit\ or\ make\ an\ invalid\ move.\r\n
+comment7.params=in
+comment7.target=void\ setIn(java.io.InputStream)
+comment7.text=\r\n\ set\ the\ input\ stream\ for\ human\ commands\ (house\ numbers\ and\ QUIT).\r\n\r\n
+comment8.params=out
+comment8.target=void\ setOut(java.io.PrintStream)
+comment8.text=\r\n\ set\ the\ output\ stream\ for\ board\ state\ \r\n
+numComments=9

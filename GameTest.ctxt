@@ -1,0 +1,20 @@
+#BlueJ class context
+comment0.params=
+comment0.target=GameTest()
+comment1.params=
+comment1.target=void\ setUp()
+comment2.params=
+comment2.target=void\ tearDown()
+comment3.params=
+comment3.target=void\ testGetCurrentPlayer()
+comment3.text=\n\ getCurrentPlayer()\n
+comment4.params=
+comment4.target=void\ testGetCurrentPlayerNum()
+comment4.text=\n\ getCurrentPlayerNum()\n
+comment5.params=
+comment5.target=void\ testGetCurrentBoard()
+comment5.text=\n\ getCurrentBoard()\n
+comment6.params=
+comment6.target=void\ testGetResult()
+comment6.text=\n\ getResult()\n
+numComments=7

@@ -1,0 +1,36 @@
+#BlueJ class context
+comment0.params=args
+comment0.target=void\ main(java.lang.String[])
+comment1.params=
+comment1.target=GameManagerImpl()
+comment10.params=
+comment10.target=int\ playGame()
+comment10.text=\r\n\ Play\ the\ current\ game\ to\ completion,\ returning\ the\ playerNum\ of\ the\ winning\ player\ (1..2)\ or\ 0\ if\ the\ game\ ends\ in\ a\ draw.\ Input\ is\ taken\ from\ in\ (@see\ \#manage).\ If\ a\ computer\ player\ quits\ the\ game\ then\ they\ lose.\ If\ a\ computer\ player\ takes\ longer\ than\ one\ second\ for\ any\ move\ then\ it\ loses.\ After\ each\ turn\ is\ taken\ the\ game\ state\ (toString())\ is\ sent\ to\ out.\r\n\r\n\ @throws\ QuitGameException\ If\ a\ human\ player\ quits\ the\ game\ via\ QuitGameException.\r\n
+comment11.params=in\ out
+comment11.target=Game\ manage(java.io.InputStream,\ java.io.PrintStream)
+comment11.text=\r\n\ accept\ input\ commands,\ including\ LOAD,\ SAVE,\ NEW,\ EXIT\ from\ the\ specified\ InputStream.\ All\ output\ is\ sent\ to\ the\ specified\ PrintStream.\ Can\ be\ used\ for\ testing\ the\ gameManager\ class\ via\ predefined\ inputs\ (e.g.\ a\ file)\ and\ writing\ the\ output\ to\ file.\ The\ specified\ input\ stream\ and\ output\ streams\ are\ also\ used\ for\ any\ player\ move\ input\ and\ output\ (i.e.\ selecting\ moves\ and\ QUIT).\ If\ a\ result\ is\ achieved\ this\ should\ be\ announced\ to\ the\ user.\r\n\r\n\ @param\ in\ The\ InputStream\ to\ be\ used\ for\ setting\ up\ and\ playing\ the\ game\:\ System.in\ when\ not\ testing.\r\n\r\n\ @param\ out\ The\ OutputStream\ to\ be\ used\ for\ sending\ messages\ to\ the\ user\ while\ setting\ up\ and\ playing\ the\ game\:\ System.out\ when\ not\ testing.\r\n\r\n\ @return\ The\ Game\ state\ after\ the\ instructions\ have\ been\ followed.\r\n
+comment12.params=
+comment12.target=void\ tournament()
+comment12.text=\r\n\ \ \ \ public\ void\ testMove(int\ matches)\ {\r\n\ \ \ \ for\ (int\ move\ \=\ 1;\ move\ <\=\ BoardImpl.NUMBER_OF_HOUSES\ /\ 2;\ move++)\ {\r\n\ \ \ \ Board\ board\ \=\ new\ BoardImpl();\r\n\ \ \ \ try\ {\r\n\ \ \ \ board.makeMove(move,\ 1);\r\n\ \ \ \ }\ catch\ (Exception\ e)\ {}\r\n\ \ \ \ String\ name\ \=\ "AI";\r\n\ \ \ \ int\ wins\ \=\ 0;\r\n\ \ \ \ for\ (int\ i\ \=\ 0;\ i\ <\ matches;\ i++)\ {\r\n\ \ \ \ try\ {\r\n\ \ \ \ game\ \=\ new\ GameImpl(new\ RandomPlayer("Challenger"),\ new\ RandomPlayer(name));\r\n\ \ \ \ game.setBoard(board.clone());\r\n\ \ \ \ if\ (playGame()\ \=\=\ 2)\ {\r\n\ \ \ \ wins++;\r\n\ \ \ \ }\r\n\ \ \ \ }\ catch\ (Exception\ e)\ {}\r\n\ \ \ \ }\r\n\ \ \ \ out.println(name\ +\ "\ has\ won\ "\ +\ wins\ +\ "\ out\ of\ "\ +\ matches\ +\ "\ with\ starting\ move\ "\ +\ move);\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n\r\n\ \ \ \ public\ int\ testPlayer(Player\ player,\ int\ matches,\ String\ name,\ int\ startingNum,\ boolean\ doubleMatch)\ {\r\n\ \ \ \ int\ wins\ \=\ 0;\r\n\ \ \ \ int\ ties\ \=\ 0;\r\n\ \ \ \ for\ (int\ i\ \=\ 0;\ i\ <\ matches;\ i++)\ {\r\n\ \ \ \ int\ result\ \=\ 0;\r\n\ \ \ \ if\ (doubleMatch)\ {\r\n\ \ \ \ result\ \=\ compare(player,\ new\ RandomPlayer("Challenger"));\r\n\ \ \ \ }\r\n\ \ \ \ else\ {\r\n\ \ \ \ game\ \=\ new\ GameImpl(player,\ new\ RandomPlayer("Challenger"));\r\n\ \ \ \ try\ {\r\n\ \ \ \ result\ \=\ playGame();\r\n\ \ \ \ }\ catch\ (Exception\ e)\ {}\r\n\ \ \ \ }\r\n\ \ \ \ if\ (result\ \=\=\ 1)\ {\r\n\ \ \ \ wins++;\r\n\ \ \ \ }\r\n\ \ \ \ if\ (result\ \=\=\ 0)\ {\r\n\ \ \ \ ties++;\r\n\ \ \ \ }\r\n\ \ \ \ }\r\n\ \ \ \ out.println(matches\ +\ "\ games\ played");\r\n\ \ \ \ out.println(wins\ +\ "\ games\ won");\r\n\ \ \ \ out.println(ties\ +\ "\ games\ tied");\r\n\ \ \ \ out.println((matches\ -\ wins\ -\ ties)\ +\ "\ games\ lost");\r\n\ \ \ \ return\ wins;\r\n\ \ \ \ }\r\n
+comment13.params=p\ q
+comment13.target=int\ compare(Player,\ Player)
+comment2.params=player1\ player2
+comment2.target=GameManagerImpl(Player,\ Player)
+comment3.params=
+comment3.target=Game\ getGame()
+comment3.text=@return\ The\ current\ game\ object\ *
+comment4.params=fname
+comment4.target=void\ loadGame(java.lang.String)
+comment4.text=\r\n\ Load\ the\ game\ state\ from\ the\ given\ file.\r\n\r\n\ @param\ fname\ The\ name\ of\ the\ file\ to\ load.\r\n\r\n\ @throws\ FileFailedException\ If,\ for\ whatever\ reason,\ the\ game\ file\ could\ not\ be\ loaded.\r\n\r\n
+comment5.params=fname
+comment5.target=void\ loadGameWithoutPlaying(java.lang.String)
+comment6.params=fname
+comment6.target=void\ saveGame(java.lang.String)
+comment6.text=\r\n\ Save\ the\ game\ state\ to\ the\ given\ file.\r\n\r\n\ @param\ fname\ The\ name\ of\ the\ file\ to\ save.\r\n\r\n\ @throws\ FileFailedException\ If,\ for\ whatever\ reason,\ the\ game\ file\ could\ not\ be\ saved\ (including\ file\ already\ exists).\r\n\r\n
+comment7.params=scanner
+comment7.target=void\ newGame(java.util.Scanner)
+comment8.params=player1\ player2
+comment8.target=void\ newGame(Player,\ Player)
+comment9.params=player1\ player2
+comment9.target=void\ newGameWithoutPlaying(Player,\ Player)
+numComments=14
